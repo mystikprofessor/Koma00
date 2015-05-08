@@ -135,6 +135,7 @@ switch (ans)
 		for (int ctr = 0; ctr  <=2; ctr++){
 			cout << "If the " << voltageTitle[ctr] << " is not avaliable press 'x' or hit any key then 'enter' to input " << voltageTitle[ctr] << endl;
 			cin  >> nsf;
+			do{
 			if (nsf == 'x' || nsf == 'X'){
 				input[ctr] = 0;
 			}
@@ -151,6 +152,7 @@ switch (ans)
 					chk1 = true;
 				}
 			}
+			}while(!chk1);
 			nsf = 'y';
 		}
 		current    = input[0];
@@ -176,6 +178,7 @@ switch (ans)
 		for (int ctr =0; ctr <=2; ctr++){
 			cout << "If the " << resistanceTitle[ctr] << " is not avaliable press 'x' or hit any key then 'enter' to input " << resistanceTitle[ctr] << endl;
 			cin  >> nsf;
+			do{
 			if (nsf == 'x' || nsf == 'X'){
 				input[ctr] = 0;
 			}
@@ -192,6 +195,7 @@ switch (ans)
 					chk1 = true;
 				}
 			}
+			}while(!chk1);
 			nsf = 'y';
 		}
 		voltage = input[0];
