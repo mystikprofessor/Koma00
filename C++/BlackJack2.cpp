@@ -6,7 +6,7 @@
 using namespace std;
  
 // #1: define what a card is
-struct MY_CARD { string cardName;    // Ace, King, One, Seven, etc
+struct MY_CARD { string cardName;   // Ace, King, One, Seven, etc
                 string cardSuit;    // Heart, Club, Spade, Diamond
                 int faceValue;      // 11, 10, 9, 8, etc
                 int myLocation;     // 1 = deck, 2 = hand, 3 = discard
