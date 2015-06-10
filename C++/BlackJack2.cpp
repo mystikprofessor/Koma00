@@ -70,6 +70,7 @@ int main()
   	int playerScore=GetScore(cardDeck, playerHand);
 	int dealerScore=GetScore(cardDeck, dealerHand);
 	
+	// Outputs the first dealers and players hands. 
 
     cout << endl << "DEALER HAND:" << endl;
     PrintHand(cardDeck, dealerHand);
@@ -106,20 +107,29 @@ int main()
 		}
 		
     // infinite loop with conditional control breaks
+
     char pAns = (char) 0;
 	char dAns = (char) 0;
     while (1) {
        
         // see how many cards in each hand
+
         int playerCardCount = GetCardCount(playerHand);
         int dealerCardCount = GetCardCount(dealerHand);
 
        	// players turn
+
 		int cAces;
         pAns = 'H';
         while (pAns == 'H' || pAns == 'h') {
+				
+			// Adding up the Players Score and Card Count
+			
             playerCardCount = GetCardCount(playerHand);
             playerScore = GetScore(cardDeck, playerHand);
+
+			// Outputs the playrs turn
+			
             cout << "====== PLAYER'S TURN. " << playerCardCount << " cards, " << playerScore << " points." << endl;
             PrintHand(cardDeck, playerHand);
 
