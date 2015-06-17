@@ -7,19 +7,19 @@ DECLARE SUB PlayerDraw (deck() AS ANY, cardNum AS INTEGER, cardsDealt AS INTEGER
 DECLARE SUB DealerDraw (deck() AS ANY, cardNum AS INTEGER, cardsDealt AS INTEGER, playerTotal AS INTEGER, dealerTotal AS INTEGER)
 CLS
 
-// structure of cards
+' structure of cards
 
-TYPE CARDS
+TYPE cards
 	faceValue AS STRING * 5
 	cardValue AS INTEGER
 	suit AS STRING * 8
 	status AS INTEGER
 END TYPE
 
-// declare functions
+'declare functions
 
 DIM save AS STRING
-DIM deck(52) AS CARDS
+DIM deck(52) AS cards
 DIM playerHand(11) AS STRING
 DIM dealerHand(11) AS STRING
 DIM playerTotal AS INTEGER
@@ -118,7 +118,7 @@ SUB CardChecker
 
 END SUB
 
-SUB DealerDraw (deck() AS CARDS, cardNum AS INTEGER, cardsDealt AS INTEGER, playerTotal AS INTEGER, dealerTotal AS INTEGER)
+SUB DealerDraw (deck() AS cards, cardNum AS INTEGER, cardsDealt AS INTEGER, playerTotal AS INTEGER, dealerTotal AS INTEGER)
 IF playerTotal <= 21 THEN
 	again = 1
 		DO WHILE again = 1
@@ -139,7 +139,7 @@ END IF
 
 END SUB
 
-FUNCTION Dealing$ (deck() AS CARDS, cardNum AS INTEGER, cardsDealt AS INTEGER)
+FUNCTION Dealing$ (deck() AS cards, cardNum AS INTEGER, cardsDealt AS INTEGER)
 
 CALL Shuffling(deck(), cardsDealt)
 
@@ -172,7 +172,7 @@ SUB OpenFile (handsPlayed AS INTEGER, playerWins AS INTEGER)
 
 END SUB
 
-SUB PlayerDraw (deck() AS CARDS, cardNum AS INTEGER, cardsDealt AS INTEGER, playerTotal AS INTEGER, dealerTotal AS INTEGER)
+SUB PlayerDraw (deck() AS cards, cardNum AS INTEGER, cardsDealt AS INTEGER, playerTotal AS INTEGER, dealerTotal AS INTEGER)
 
 DIM ans AS STRING
 again = 1
@@ -196,7 +196,7 @@ again = 1
 
 END SUB
 
-SUB Populate (deck() AS CARDS)
+SUB Populate (deck() AS cards)
 
 	FOR ctr = 1 TO 52
 		READ deck(ctr).faceValue
@@ -205,13 +205,13 @@ SUB Populate (deck() AS CARDS)
 		PRINT
 	FOR ctr = 1 TO 52
 		SELECT CASE ctr MOD 4
-		   CASE 0
+			CASE 0
 			 deck(ctr).suit = "Spades"
-		   CASE 1
+			CASE 1
 			 deck(ctr).suit = "Diamonds"
-		   CASE 2
+			CASE 2
 			 deck(ctr).suit = "Clubs"
-		   CASE 3
+			CASE 3
 			 deck(ctr).suit = "Hearts"
 	  END SELECT
 	NEXT ctr
@@ -230,7 +230,7 @@ SUB Populate (deck() AS CARDS)
 																						 
 END SUB
 
-SUB Shuffling (deck() AS CARDS, cardsDealt AS INTEGER)
+SUB Shuffling (deck() AS cards, cardsDealt AS INTEGER)
 	IF cardsDealt = 52 THEN
 		FOR ctr = 1 TO 52
 			deck(ctr).status = deck(ctr).status
