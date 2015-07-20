@@ -1,0 +1,23 @@
+DECLARE SUB Math (thisNum1 AS INTEGER, thisNum2 AS INTEGER, thisNum3 AS INTEGER)
+CLS
+DIM num1 AS INTEGER
+DIM num2 AS INTEGER
+DIM num3 AS INTEGER
+
+INPUT "Enter the first number"; num1
+INPUT "Enter the second number"; num2
+
+CALL Math(num1, num2, num3)
+
+PRINT num3
+
+
+
+SUB Math (thisNum1 AS INTEGER, thisNum2 AS INTEGER, thisNum3 AS INTEGER)
+PRINT
+PRINT "This will multiply "; thisNum1; " and "; thisNum2; "."
+
+thisNum3 = (thisNum1 * thisNum2)
+
+END SUB
+
