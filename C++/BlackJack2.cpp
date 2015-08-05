@@ -39,7 +39,7 @@ int main()
 
     // #2 array of MyCards
     // zero-fill hands for empty-checking later!
-    MY_CARD cardDeck[52];
+    MY_CARD cardDeck[52];    //Declare the Deck
     int dealerHand[5] = {0};
     int playerHand[5] = {0};
 
@@ -181,6 +181,7 @@ int main()
         while (dAns == 'H' || dAns == 'h') {
             dealerCardCount = GetCardCount(dealerHand);
             dealerScore = GetScore(cardDeck, dealerHand);
+
             cout << "====== DEALER'S TURN. " << dealerCardCount << " cards, " << dealerScore << " points." << endl;
             PrintHand(cardDeck, dealerHand);
 			for(int i = 0; i < 5; i++)
@@ -293,7 +294,7 @@ void AceChecker(int& thisScore, int& aces)
 		cout << "ACE CONVERTED TO 1";
 	}
 	else if (thisScore < 21 && aces > 0 ){
-			thisScore = thisScore;
+			thisScore= thisScore;
 	}
 }
 void PrintHand(MY_CARD* thisDeck, int *thisHand)

@@ -1,12 +1,21 @@
 CLS
 
-DIM word1 AS STRING
-DIM space AS INTEGER
+DIM ans AS STRING
 
-INPUT "Enter Your Word"; word1
-space = INSTR(1, word1, " ")
-'PRINT space
-PRINT LEFT$(UCASE$(word1), 1); ". "; UCASE$(MID$(word1, space, 2)); LCASE$(MID$(word1, space + 2, 20))
+INPUT "Enter your Choice"; ans
 
-                                                                  
+SELECT CASE ans
+   CASE "+"
+      PRINT "Addition"
+   CASE "-"
+      PRINT "Subtraction"
+   CASE "*"
+      PRINT "Multiplication"
+   CASE "/"
+      PRINT "Division"
+END SELECT
+
+
+
+
 
